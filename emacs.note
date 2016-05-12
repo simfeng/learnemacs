@@ -37,3 +37,19 @@ C-h m:显示所有的minor mode
 todo事项： C-c C-t toggle todo status(only head(*) worked)
 
 (setq cursor-type 'bar) ;设置鼠标样式
+
+运行整个buffer： M-x eval-buffer or M-x ev-b
+
+(electric-indent-mode t) ;解决缩进问题,这里是自动解决缩进问题，elisp注释的时候用两个;;
+
+(setq org-src-fontify-natively t) ;文档里面代码语法高亮
+#+BEGIN_SRC emacs-lisp
+;;这里可以插入代码，应该只有在.org文件可以
+;; emacs-lisp 指定了major mode, 也可以其他major mode, 支持语法高亮，上面那个设置的， 快捷输入<s + TAb
+#+END_SRC
+
+(setq initial-frame-alist (quote ((fullscreen . maximized))));开启时全屏
+
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode);elisp 语法 对应括号高亮
+
+(global-hl-line-mode t) ;高亮当前行
