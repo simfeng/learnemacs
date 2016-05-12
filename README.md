@@ -1,1 +1,1 @@
-# learnemacs
+# learnemacs-------learn emacs with some note.
