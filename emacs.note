@@ -1,0 +1,38 @@
+linum-mode: M-x linum-mode
+save file: C-x C-s
+open file: C-x C-f
+按键查询: C-h k
+变量查询: C-h v
+函数查询: C-h f
+快捷键是一种特殊的调用命令函数的方式
+关闭Electric-Indent-mode: M-x electric-indent-mod
+定义交互函数，绑定快捷键：
+(defun my-func()
+    (interactive)     ;声明为可交互函数
+    (message "hello world")
+    )
+
+(my-func()) ;执行函数
+
+也可以M-x, 然后输入 my-func,就能执行，输出"hello world"
+
+(global-set-key (kbd "<f2>") 'my-func)    ;绑定跨借鉴f2,然后C-x C-e,按f2便可以执行这个函数
+
+emacs 分为major mode和 minor mode
+一个格式的文件有一个major mode和多个 minor mode
+major mode 一般根据文件后缀名来区分，不如.c文件的major mode 就是C语言的风格
+minor mode可以看做是修饰文件的mode，比如行号显示、tool bar显示等等
+
+C-h m:显示所有的minor mode
+
+最近打开的文件 recentf-mode 			      
+
+关于org(.org)
+
+* 代表一级标题
+** 代表二级标题
+一次类推
+按 tab 键可以展开合上标题
+- 代表标题下一个选项
+todo事项： C-c C-t toggle todo status(only head(*) worked)
+
