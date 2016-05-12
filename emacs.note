@@ -36,3 +36,4 @@ C-h m:显示所有的minor mode
 - 代表标题下一个选项
 todo事项： C-c C-t toggle todo status(only head(*) worked)
 
+(setq cursor-type 'bar) ;设置鼠标样式
