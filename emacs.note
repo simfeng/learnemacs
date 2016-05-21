@@ -1,9 +1,15 @@
 linum-mode: M-x linum-mode
 save file: C-x C-s
 open file: C-x C-f
-按键查询: C-h k
-变量查询: C-h v
-函数查询: C-h f
+
+
+按键说明查询: C-h k
+变量说明查询: C-h v
+函数说明查询: C-h f
+
+函数位置查询: M-x find-function
+变量位置查询: M-x find-variable
+
 快捷键是一种特殊的调用命令函数的方式
 关闭Electric-Indent-mode: M-x electric-indent-mod
 定义交互函数，绑定快捷键：
@@ -53,3 +59,23 @@ todo事项： C-c C-t toggle todo status(only head(*) worked)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode);elisp 语法 对应括号高亮
 
 (global-hl-line-mode t) ;高亮当前行
+
+(load-theme 'monokai t) ;; 加载主题，t表示确认，无需交互进行确认
+
+没安装一个pakage from melpa，有两点要注意
+1. 名称必须与melpa名称相同
+2. 可以通过点击后面的 source 查看用法
+
+M-x package-list-packages 列出所有可安装的packages
+
+pacakge:
+smex ;;绑定快捷键M-x, 当时输入命令的时候会有提示，可按 C-s进行切换,不用了
+company ;;自动补全
+smartparens ;;自动补全括号、引号等
+swiper
+counsel 这两个在minibuffer自动提示，具体看他们的文档
+
+自己配置packages
+M-x customize-group
+
+org-mode中，光标放到行末，输入 M-RET,整理输入
