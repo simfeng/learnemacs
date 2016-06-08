@@ -79,3 +79,9 @@ counsel 这两个在minibuffer自动提示，具体看他们的文档
 M-x customize-group
 
 org-mode中，光标放到行末，输入 M-RET,整理输入
+
+
+关闭emacs时，提示有process还在运行，问题原因待查，解决办法：
+(defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
+  "Prevent annoying \"Active processes exist\" query when you quit Emacs."
+  (flet ((process-list ())) ad-do-it))
