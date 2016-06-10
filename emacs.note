@@ -87,5 +87,8 @@ org-mode中，光标放到行末，输入 M-RET,整理输入
   (flet ((process-list ())) ad-do-it))
 
 ;; Show 80-column marker
-(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
+
+;; 编码别名，否则会有warning
+(define-coding-system-alias 'UTF-8 'utf-8)
+(define-coding-system-alias 'uft8 'utf-8)
