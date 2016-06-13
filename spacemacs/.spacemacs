@@ -24,11 +24,11 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     ;; better-defaults
+     better-defaults
      emacs-lisp
      ;; git
      markdown
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -107,8 +107,8 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro for Powerline"
-                               :size 16 
-                               :weight light 
+                               :size 16
+                               :weight light
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -256,6 +256,16 @@ you should place your code here."
   (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
     "Prevent annoying \"Active processes exist\" query when you quit Emacs."
     (flet ((process-list ())) ad-do-it))
+
+
+  ;; Show 80-column marker
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1))) ;; show at start
+  (global-fci-mode 1)
+
+  ;; 编码格式别名
+  (define-coding-system-alias 'UTF-8 'utf-8)
+  (define-coding-system-alias 'utf8 'utf-8)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
